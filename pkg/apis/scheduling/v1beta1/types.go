@@ -294,6 +294,13 @@ type QueueStatus struct {
 	Reservation Reservation `json:"reservation,omitempty" protobuf:"bytes,6,opt,name=reservation"`
 }
 
+// CluterSpec represents the template of Cluster
+type Cluster struct {
+	Name string              `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
+	Weight int32             `json:"weight,omitempty" protobuf:"bytes,2,opt,name=weight"`
+	Capacity v1.ResourceList `json:"capacity,omitempty" protobuf:"bytes,3,opt,name=capacity"`
+}
+
 // QueueSpec represents the template of Queue.
 type QueueSpec struct {
 	Weight     int32           `json:"weight,omitempty" protobuf:"bytes,1,opt,name=weight"`
@@ -304,6 +311,9 @@ type QueueSpec struct {
 
 	// Guarantee indicate configuration about resource reservation
 	Guarantee Guarantee `json:"guarantee,omitempty" protobuf:"bytes,4,opt,name=guarantee"`
+
+	// extendCluster indicate the jobs in this Queue will be dispatched to these clusters.
+	ExtendClusters []Cluster `json:"extendClusters,omitempty" protobuf:"bytes,4,opt,name=extendClusters"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
