@@ -8,7 +8,7 @@ require (
 	k8s.io/apiserver v0.19.6
 	k8s.io/client-go v0.19.6
 	k8s.io/code-generator v0.19.6
-	k8s.io/klog v1.0.0
+	k8s.io/klog/v2 v2.2.0
 )
 
 replace (
@@ -16,5 +16,5 @@ replace (
 	k8s.io/apimachinery => k8s.io/apimachinery v0.19.6
 	k8s.io/apiserver => k8s.io/apiserver v0.19.6
 	k8s.io/client-go => k8s.io/client-go v0.19.6
-	k8s.io/klog => k8s.io/klog v1.0.0
+	k8s.io/klog/v2 => k8s.io/klog/v2 v2.2.0
 )
